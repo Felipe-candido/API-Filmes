@@ -6,6 +6,7 @@ def listar_filmes():
     api_key = "f3e34a127ad783701ab69bbae926373e"
     url = f"https://api.themoviedb.org/3/discover/movie?api_key={api_key}&language=pt-BR"
 
+    # ENDPOINT PARA LISTAR O NOME DOS GENEROS DOS FILMES, QUE NÃO APARECE NA PRIMEIRA URL
     url_generos = f"https://api.themoviedb.org/3/genre/movie/list?api_key={api_key}&language=pt-BR"
     response_generos = requests.get(url_generos)
     generos_data = response_generos.json()
@@ -144,7 +145,7 @@ while True:
     print("=========== MENU ==========")
     print("Selecione o numero da opção de deseja")
     print("1 - Listar todos os filmes(coloquei apenas 100 pois a API é muito grande)")
-    print("2 - Filtrar por gênero(filtra apenas os 100 listados acima)")
+    print("2 - Filtrar por gênero(filtra apenas os 100 listados acima. colocar acento ao digitar)")
     print("3 - Pesquisar pelo nome(esse busca na API inteira)")
     opcao = input()
 
